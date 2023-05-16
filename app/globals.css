@@ -2,26 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-bg-welcome {
+  background-color:#000000;
+  background-image: 
+    radial-gradient(at 0% 0%, #7269ff 0, transparent 50%), 
+    radial-gradient(at 100% 100%, #7269ff 0, transparent 50%), 
+    radial-gradient(at 125% 100%, #7269ff 0, transparent 15%);
+}
+
+.gradient-bg-services {
+  background-color:#000000;
+  background-image: 
+    radial-gradient(at 0% 100%, #7269ff 0, transparent 50%), 
+    radial-gradient(at 100% 00%, #7269ff 0, transparent 50%), 
+    radial-gradient(at 125% 00%, #7269ff 0, transparent 15%);
+}
+
+.gradient-bg-transactions {
+  background-color: #000000;
+  background-image:
+    radial-gradient(at 0% 0%, #7269ff 0, transparent 50%);
+}
+
+.gradient-bg-footer {
+  background-color: #7269ff;
+  background-image: 
+    radial-gradient(at 0% 100%, #7269ff 0, transparent 53%), 
+    radial-gradient(at 50% 250%, #7269ff 0, transparent 50%);
+}
+
+.blue-glassmorphism {
+  background: #272727;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #302b68;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #7269ff;
+}
+
+/* white glassmorphism */
+.white-glassmorphism {
+  background: #7269ff;
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #7269ff;
+}
+
+.eth-card {
+  background-color:#7269ff;
+  background-image: 
+    radial-gradient(at 83% 67%, #7269ff 0, transparent 58%), 
+    radial-gradient(at 67% 20%, #7269ff 0, transparent 59%), 
+    radial-gradient(at 88% 35%, #ffffff 0, transparent 30%), 
+    radial-gradient(at 0% 0%, #7269ff 0,transparent 52%), 
+    radial-gradient(at 27% 71%, #7269ff 0, transparent 49%), 
+    radial-gradient(at 74% 89%, #7269ff 0, transparent 51%), 
+    radial-gradient(at 53% 75%, #7269ff 0, transparent 45%);
+}
+
+.text-gradient {
+  background-color: #7269ff;
+  background-image: radial-gradient(at 4% 36%, #ffffff 0, transparent 53%), radial-gradient(at 100% 60%, rgb(0, 0, 0) 0, transparent 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
