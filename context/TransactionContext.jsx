@@ -30,7 +30,8 @@ export const TransactionsProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(
-    localStorage.getItem("transactionCount")
+    typeof localStorage !== "undefined" &&
+      localStorage.getItem("transactionCount")
   );
   const [transactions, setTransactions] = useState([]);
   const handleChange = (e, name) => {
@@ -93,11 +94,11 @@ export const TransactionsProvider = ({ children }) => {
         const transactionsContract = createEthereumContract();
         const currentTransactionCount =
           await transactionsContract.getTransactionCount();
-
-        window.localStorage.setItem(
-          "transactionCount",
-          currentTransactionCount
-        );
+        typeof window !== "undefined" &&
+          window.localStorage.setItem(
+            "transactionCount",
+            currentTransactionCount
+          );
       }
     } catch (error) {
       console.log(error);
